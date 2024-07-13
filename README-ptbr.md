@@ -1,15 +1,16 @@
 # Groq-Translate
 
-Traduza com IA
+Groq-Translate é uma ferramenta de tradução baseada em inteligência artificial que oferece traduções precisas e versáteis para palavras e frases em diversos idiomas. Utilizando os avançados modelos de IA da Groq, o Groq-Translate não apenas traduz textos, mas também fornece sinônimos, variações de traduções, e frases semelhantes, proporcionando uma compreensão mais ampla e contextual das traduções.
 
-## [Português](Readme-pt.md) | [English](README.md)
+###### [![](img/en-flag.svg) English](README.md) | [![](img/br.png) Português](README-ptbr.md)
 
-### Autor: [e43b](https://github.com/e43b/)
-### Repositório do projeto: [Groq-Translate](https://github.com/e43b/Groq-Translate)
-### Doação: [Oxapay](https://oxapay.com/donate/40874860)
-### Discord: [Groq-Translate Discord](https://discord.gg/bEyHhmbRVw)
-### Link para o site: [Groq-Translate Website](https://e43b.github.io/Groq-Translate/)
-### Gere sua Key: [Groq Console](https://console.groq.com/keys)
+[![Donate](https://img.shields.io/badge/Donate-Oxapay-blue)](https://oxapay.com/donate/40874860)
+[![Discord](https://img.shields.io/badge/Discord-Join%20Server-blue)](https://discord.gg/CsBMMXBz7t)
+
+**GitHub Project**: [DC Server Link Check](https://github.com/e43b/DC-Server-Link-Check/)
+**Autor**: [e43b](https://github.com/e43b)
+**Link para o site**: [Groq-Translate Website](https://e43b.github.io/Groq-Translate/)
+**Gere sua Key**: [Groq Console](https://console.groq.com/keys)
 
 ## Instruções para Uso
 
@@ -80,4 +81,12 @@ Modifique as partes específicas dos prompts no `script.js` para personalizar a 
 
 ![Prompt](img/prompt.png)
 
-Apoio total é dado para forks e modificações a partir do nosso projeto inicial. Apenas pedimos crédito no projeto, linkando o autor [e43b](https://github.com/e43b/) e o repositório original [Groq-Translate](https://github.com/e43b/Groq-Translate/).
+### Suporte
+
+Se encontrar problemas ou dificuldades, acesse nosso [Discord](https://discord.gg/bEyHhmbRVw) e envie uma mensagem para obter suporte imediato da nossa equipe e da comunidade.
+
+### Contribuição
+
+Groq-Translate é um projeto open-source e acolhe contribuições da comunidade. Você pode clonar o repositório, fazer modificações e personalizar os prompts para adaptar a ferramenta às suas necessidades específicas. Para mais informações sobre como contribuir, visite nosso [repositório no GitHub](https://github.com/e43b/Groq-Translate).
+
+Apoiamos totalmente forks e modificações baseadas em nosso projeto inicial. Apenas pedimos que você credite o autor [e43b](https://github.com/e43b/) e o repositório original [Groq-Translate](https://github.com/e43b/Groq-Translate) no seu novo projeto.
