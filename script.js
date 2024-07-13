@@ -101,22 +101,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (words.length === 1) {
             prompt = `
-Usuário forneceu uma palavra. Responda com:
-1. Tradução da palavra "${input}" para ${outputLanguage}.
-2. Sinônimos da palavra em ${inputLanguage} com tradução para ${outputLanguage}.
-3. Palavras que têm um sentido semelhante em ${inputLanguage} com tradução para ${outputLanguage}.
-4. Frases em ${inputLanguage} que usam a palavra em diferentes contextos, junto com a tradução para cada frase em ${outputLanguage}.
+User provided a word. Respond with:
+1. Translation of the word "${input}" into ${outputLanguage}.
+2. Synonyms of the word in ${inputLanguage} with translations into ${outputLanguage}.
+3. Words that have a similar meaning in ${inputLanguage} with translations into ${outputLanguage}.
+4. Sentences in ${inputLanguage} that use the word in different contexts, along with the translation for each sentence into ${outputLanguage}.
 
-Palavra: "${input}"
+Word: "${input}"
             `;
         } else {
             prompt = `
-Usuário forneceu uma frase. Responda com:
-1. Tradução da frase "${input}" para ${outputLanguage}.
-2. Variações da tradução mantendo o mesmo sentido em ${outputLanguage} com a frase original em ${inputLanguage}.
-3. Outras frases em ${inputLanguage} que têm um sentido semelhante à frase em ${inputLanguage}, junto com a tradução para cada frase em ${outputLanguage}.
+User provided a sentence. Respond with:
+1. Translation of the sentence "${input}" into ${outputLanguage}.
+2. Variations of the translation maintaining the same meaning in ${outputLanguage} with the original sentence in ${inputLanguage}.
+3. Other sentences in ${inputLanguage} that have a similar meaning to the sentence in ${inputLanguage}, along with the translation for each sentence into ${outputLanguage}.
 
-Frase: "${input}"
+Sentence: "${input}"
             `;
         }
 
