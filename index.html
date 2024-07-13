@@ -23,14 +23,38 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
+            max-width: 2000px;
             width: 100%;
             margin: 20px;
         }
 
-        h1 {
+        .header-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             margin-bottom: 20px;
-            text-align: center;
+            white-space: nowrap;
+        }
+
+        .header-links a {
+            margin: 10px 20px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .header-links a:hover {
+            color: #0056b3;
+        }
+
+        .header-links i {
+            margin-right: 5px;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto 20px;
+            max-width: 100%;
+            height: auto;
         }
 
         label {
@@ -136,12 +160,30 @@
         #search-input {
             margin-bottom: 20px;
         }
+
+        @media (max-width: 600px) {
+            .header-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .header-links a {
+                margin: 10px 0;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Groq API Translator</h1>
-        
+        <div class="header-links">
+            <a href="https://github.com/e43b/Groq-Translate/" target="_blank"><i class="fab fa-github-square"></i>Project Repository</a>
+            <a href="https://github.com/e43b/" target="_blank"><i class="fab fa-github"></i> My Profile</a>
+            <a href="https://discord.gg/bEyHhmbRVw" target="_blank"><i class="fab fa-discord"></i>Join our Discord</a>
+            <a href="https://oxapay.com/donate/40874860" target="_blank"><i class="fas fa-donate"></i>Donate</a>
+        </div>
+
+        <img src="logo.png" alt="Groq Translate">
+
         <label for="api-key">API Key:</label>
         <div class="input-group">
             <input type="password" id="api-key" placeholder="Enter your API key">
