@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groq API Translator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 2000px;
+            width: 100%;
+            margin: 20px;
+        }
+
+        .header-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 20px;
+            white-space: nowrap;
+        }
+
+        .header-links a {
+            margin: 10px 20px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .header-links a:hover {
+            color: #0056b3;
+        }
+
+        .header-links i {
+            margin-right: 5px;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto 20px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .input-group input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .input-group .fa-eye {
+            margin-left: -30px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button i {
+            margin-right: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #delete-key-btn {
+            background-color: #FF4136;
+        }
+
+        #delete-key-btn:hover {
+            background-color: #E62E00;
+        }
+
+        #save-key-btn {
+            background-color: #2ECC40;
+        }
+
+        #save-key-btn:hover {
+            background-color: #28B837;
+        }
+
+        #response-container {
+            margin-top: 20px;
+            white-space: pre-wrap;
+        }
+
+        .markdown-body {
+            box-sizing: border-box;
+            padding: 10px;
+            border: 1px solid #ddd;
+            overflow-y: auto;
+        }
+
+        .history-entry {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .history-entry h2 {
+            margin-top: 0;
+        }
+
+        .filter-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        #filter-model, #sort-order {
+            width: calc(50% - 10px);
+        }
+
+        #search-input {
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .header-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .header-links a {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-links">
+            <a href="https://github.com/e43b/Groq-Translate/" target="_blank"><i class="fab fa-github-square"></i>Project Repository</a>
+            <a href="https://github.com/e43b/" target="_blank"><i class="fab fa-github"></i> My Profile</a>
+            <a href="https://discord.gg/bEyHhmbRVw" target="_blank"><i class="fab fa-discord"></i>Join our Discord</a>
+            <a href="https://oxapay.com/donate/40874860" target="_blank"><i class="fas fa-donate"></i>Donate</a>
+        </div>
+
+        <img src="logo.png" alt="Groq Translate">
+
+        <label for="api-key">API Key:</label>
+        <div class="input-group">
+            <input type="password" id="api-key" placeholder="Enter your API key">
+            <i class="fas fa-eye" id="toggle-api-key"></i>
+        </div>
+        <button id="save-key-btn"><i class="fas fa-check"></i>Save API Key</button>
+        <button id="delete-key-btn"><i class="fas fa-trash"></i>Delete Saved API Key</button>
+        
+        <label for="model">Choose a model:</label>
+        <select id="model">
+            <option value="gemma-7b-it">gemma-7b-it</option>
+            <option value="gemma2-9b-it">gemma2-9b-it</option>
+            <option value="llama3-70b-8192">llama3-70b-8192</option>
+            <option value="llama3-8b-8192">llama3-8b-8192</option>
+            <option value="mixtral-8x7b-32768">mixtral-8x7b-32768</option>
+        </select>
+
+        <label for="input-text">Enter word or phrase:</label>
+        <input type="text" id="input-text" placeholder="Enter a word or phrase">
+
+        <label for="input-lang">Language of the input text (leave blank for auto-detect):</label>
+        <select id="input-lang"></select>
+
+        <label for="output-lang">Translate to:</label>
+        <select id="output-lang"></select>
+        
+        <button id="submit-btn">Submit</button>
+        
+        <div id="response-container" class="markdown-body"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
