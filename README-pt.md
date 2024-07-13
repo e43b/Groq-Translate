@@ -1,10 +1,6 @@
-Claro! Aqui está uma versão aprimorada do seu README.md:
-
----
-
 # Groq-Translate
 
-Translate With AI
+Traduza com IA
 
 ## [Português](Readme-pt.md) | [English](README.md)
 
@@ -85,7 +81,3 @@ Modifique as partes específicas dos prompts no `script.js` para personalizar a 
 ![Prompt](img/prompt.png)
 
 Apoio total é dado para forks e modificações a partir do nosso projeto inicial. Apenas pedimos crédito no projeto, linkando o autor [e43b](https://github.com/e43b/) e o repositório original [Groq-Translate](https://github.com/e43b/Groq-Translate/).
-
----
-
-Espero que isso atenda às suas expectativas!
