@@ -160,10 +160,10 @@ ${prompt}`;
     if (window.location.hash === '#historico') {
         document.body.innerHTML = `
         <div class="container">
-            <h1>Translation History</h1>
+            <h1>Histórico de traduções</h1>
             <div class="filter-group">
                 <select id="filter-model">
-                    <option value="">All Models</option>
+                    <option value="">Todos os modelos</option>
                     <option value="gemma-7b-it">gemma-7b-it</option>
                     <option value="gemma2-9b-it">gemma2-9b-it</option>
                     <option value="llama3-70b-8192">llama3-70b-8192</option>
@@ -171,11 +171,11 @@ ${prompt}`;
                     <option value="mixtral-8x7b-32768">mixtral-8x7b-32768</option>
                 </select>
                 <select id="sort-order">
-                    <option value="newest">Newest First</option>
-                    <option value="oldest">Oldest First</option>
+                    <option value="newest">Mais recente Primeiro</option>
+                    <option value="oldest">Mais antigo Primeiro</option>
                 </select>
             </div>
-            <input type="text" id="search-input" placeholder="Search">
+            <input type="text" id="search-input" placeholder="Pesquisar">
             <div id="history-container"></div>
         </div>`;
 
@@ -193,10 +193,10 @@ ${prompt}`;
                 entryDiv.classList.add('history-entry');
                 entryDiv.innerHTML = `
                     <h2>Entry ${index + 1}</h2>
-                    <p><strong>Model:</strong> ${entry.model}</p>
-                    <p><strong>Date:</strong> ${new Date(entry.timestamp).toLocaleString()}</p>
-                    <p><strong>Input:</strong> ${entry.inputText}</p>
-                    <div class="markdown-body"><strong>Response:</strong> ${marked.parse(entry.responseContent)}</div>
+                    <p><strong>Modelo:</strong> ${entry.model}</p>
+                    <p><strong>Data:</strong> ${new Date(entry.timestamp).toLocaleString()}</p>
+                    <p><strong>Entrada:</strong> ${entry.inputText}</p>
+                    <div class="markdown-body"><strong>Resposta:</strong> ${marked.parse(entry.responseContent)}</div>
                 `;
                 historyContainer.appendChild(entryDiv);
             });
