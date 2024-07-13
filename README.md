@@ -1,4 +1,4 @@
-# Groq-Translate [![Views](https://hits.sh/github.com/e43bgroqtrasneng/hits.svg)](https://github.com/e43b/Groq-Translate/)
+# Groq-Translate [![Views](https://hits.sh/github.com/e43bgroqtranseng/hits.svg)](https://github.com/e43b/Groq-Translate/)
 
 Groq-Translate is an AI-based translation tool that offers accurate and versatile translations for words and phrases in various languages. Utilizing Groq's advanced AI models, Groq-Translate not only translates text but also provides synonyms, translation variations, and similar phrases, offering a broader and more contextual understanding of translations.
 
