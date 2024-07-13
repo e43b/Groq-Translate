@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
             outputLang.value = getCookie('outputLang') || '';
             modelSelect.value = getCookie('modelSelect') || '';
         })
-        .catch(error => console.error('Error loading languages:', error));
+        .catch(error => console.error('Erro ao carregar idiomas:', error));
 
     // Carregar chave API salva
     const savedApiKey = localStorage.getItem('api-key');
@@ -62,13 +62,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     saveKeyBtn.addEventListener('click', () => {
         localStorage.setItem('api-key', apiKeyInput.value);
-        alert('API key saved!');
+        alert('Chave de API guardada!');
     });
 
     deleteKeyBtn.addEventListener('click', () => {
         localStorage.removeItem('api-key');
         apiKeyInput.value = '';
-        alert('Saved API key deleted!');
+        alert('Chave de API guardada eliminada!');
     });
 
     toggleApiKeyBtn.addEventListener('click', () => {
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const outputLanguage = outputLang.value;
 
         if (!apiKey || !input) {
-            alert('Please enter both the API key and the input text.');
+            alert('Introduza a chave API e o texto de entrada.');
             return;
         }
 
