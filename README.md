@@ -1,7 +1,7 @@
 # Groq-Translate
 Translate With AI
 
-## [Português](Readme-pt.md) | [English](README.md)
+## [Português](README-pt.md) | [English](README.md)
 
 Autor: https://github.com/e43b/
 Respositório do projeto: https://github.com/e43b/Groq-Translate
